@@ -5,13 +5,17 @@ import { Router } from '@angular/router';
   selector: 'app-course',
   standalone: true,
   imports: [],
-  templateUrl: './course.component.html',
-  styleUrl: './course.component.scss',
+  templateUrl: './courses.component.html',
+  styleUrl: './courses.component.scss',
 })
 export class CourseComponent {
   constructor(private router: Router) {}
 
   navegarParaHome() {
     this.router.navigate(['/']);
+  }
+
+  navegarParaCursosDetails() {
+    this.router.navigate(['/course/detalhado']);
   }
 }

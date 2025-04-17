@@ -1,12 +1,29 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './feature/home/home.component';
-import { AboutComponent } from './feature/about/about.component';
-import { CourseComponent } from './feature/course/course.component';
-import { CartComponent } from './feature/cart/cart.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'course', component: CourseComponent },
-  { path: 'cart', component: CartComponent },
+  {
+    path: '',
+    // Implementação de lazy loading - só carrega o módulo quando necessário
+    loadChildren: () =>
+      import('./feature/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'about',
+    // Implementação de lazy loading - só carrega o módulo quando necessário
+    loadChildren: () =>
+      import('./feature/about/about.module').then((m) => m.AboutModule),
+  },
+
+  {
+    path: 'course',
+    // Implementação de lazy loading - só carrega o módulo quando necessário
+    loadChildren: () =>
+      import('./feature/course/course.module').then((m) => m.CourseModule),
+  },
+  {
+    path: 'cart',
+    // Implementação de lazy loading - só carrega o módulo quando necessário
+    loadChildren: () =>
+      import('./feature/cart/cart.module').then((m) => m.CartModule),
+  },
 ];
