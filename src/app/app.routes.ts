@@ -8,6 +8,12 @@ export const routes: Routes = [
       import('./feature/home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'login',
+    // Implementação de lazy loading - só carrega o módulo quando necessário
+    loadChildren: () =>
+      import('./feature/login/login.module').then((m) => m.LoginModule),
+  },
+  {
     path: 'about',
     // Implementação de lazy loading - só carrega o módulo quando necessário
     loadChildren: () =>

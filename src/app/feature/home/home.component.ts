@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private auth: AuthService) {}
 
   navegarParaSobre() {
     this.router.navigate(['/about']);
@@ -21,5 +20,14 @@ export class HomeComponent {
 
   navegarParaCart() {
     this.router.navigate(['/cart']);
+  }
+
+  navegarParaLogin() {
+    this.router.navigate(['/login']);
+  }
+
+  navegarParaLogout() {
+    console.log('Usuario deslogado!');
+    this.auth.logout();
   }
 }

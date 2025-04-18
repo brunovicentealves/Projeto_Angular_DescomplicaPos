@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course',
-  standalone: true,
-  imports: [],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.scss',
 })

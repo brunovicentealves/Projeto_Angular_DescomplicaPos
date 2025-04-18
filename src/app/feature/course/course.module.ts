@@ -17,13 +17,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CourseComponent,
-    CourseDetailComponent,
-    CourseDetailComponent,
-    SharedModule,
-    RouterModule.forChild(routes),
-  ],
+  declarations: [CourseComponent, CourseDetailComponent],
+  imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
+  exports: [CourseComponent],
 })
 export class CourseModule {}
